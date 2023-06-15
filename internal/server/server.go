@@ -11,6 +11,8 @@ import (
 	"go.uber.org/fx"
 
 	"github.com/omalloc/kratos-layout/internal/conf"
+	"github.com/omalloc/kratos-layout/internal/data"
+	"github.com/omalloc/kratos-layout/internal/service"
 	"github.com/omalloc/kratos-layout/pkg/di"
 )
 
@@ -25,7 +27,10 @@ var ProviderSet = fx.Provide(
 	registry.NewRegistrar,
 	registry.NewDiscovery,
 
+	// health..
 	di.AsHealth(health.NewServer),
+	di.AsChecker[*data.Data](),
+	di.AsChecker[*service.GreeterService](),
 )
 
 func NewConfigAdapter(bc *conf.Bootstrap) (*protobuf.Registry, *protobuf.Tracing, *conf.Server, *conf.Data) {

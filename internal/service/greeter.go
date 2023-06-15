@@ -36,6 +36,5 @@ func (s *GreeterService) SayHello(ctx context.Context, in *v1.HelloRequest) (*v1
 
 // Check greeter health checker, implement health.Checker interface.
 func (s *GreeterService) Check(ctx context.Context) error {
-	s.log.Info("check greeter health")
 	return nil
 }
