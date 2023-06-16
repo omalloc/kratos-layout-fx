@@ -4,7 +4,7 @@ go 1.18
 
 require (
 	github.com/go-kratos/kratos/v2 v2.6.2
-	github.com/omalloc/contrib v0.1.1
+	github.com/omalloc/contrib v0.1.2
 	github.com/spf13/cobra v1.7.0
 	go.etcd.io/etcd/client/v3 v3.5.9
 	go.uber.org/automaxprocs v1.5.1
